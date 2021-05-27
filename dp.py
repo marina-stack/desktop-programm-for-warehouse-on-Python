@@ -30,10 +30,14 @@ def click_button():
             print(row)
     cursor.close ()
 
+#function for button2
+def coming_mom():
+    print ('2')
+
 #decription desktop window
 window = Tk()
 window.title("Склад Альма Опт")
-window.geometry ('2000x1000')
+window.geometry ('500x500')
 
 #declaring tabs
 tab_control = ttk.Notebook(window)
@@ -57,8 +61,9 @@ tab_control.pack(expand=1, fill='both')
 
 #describe button on tab1
 btn = Button(tab1, text="Загрузить базу данных", command=click_button)
-btn.place(x=10, y=50)
-btn.pack()
+btn.place(x=10, y=10)
+btn2 = Button(tab1, text = "Приход", command=coming_mom)
+btn2.place(x=150, y=10)
 
 
 #grafics window output
