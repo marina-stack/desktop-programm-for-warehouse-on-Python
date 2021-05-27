@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import ttk
+from tkinter import filedialog
 import tkinter as tk
 import tkinter.ttk as ttk
 import pymysql.cursors
@@ -13,7 +14,7 @@ connection = pymysql.connect(host='localhost',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
 
-#function for button
+#function for button1
 def click_button():
     with connection.cursor() as cursor:
         # SQL
@@ -30,9 +31,13 @@ def click_button():
             print(row)
     cursor.close ()
 
-#function for button2
-def coming_mom():
-    print ('2')
+#function for button2 (upolad file coming for database mom)
+def coming_mom(event=None):
+    filename = filedialog.askopenfilename()
+    print('Secected:', filename)
+
+
+
 
 #decription desktop window
 window = Tk()
