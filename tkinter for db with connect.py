@@ -8,6 +8,12 @@ import pymysql.cursors
 import sqlite3
 
 #connection database 'sklad'
+my_conn =  pymysql.connect(host='localhost',
+                             user='root',
+                             password='almaopt',
+                             db='sklad',
+                             charset='utf8mb4',
+                             cursorclass=pymysql.cursors.DictCursor)
 
 #functions for buttons on tab1
 def click_button():
@@ -71,11 +77,11 @@ boa_search_entry = Entry(frame_search, textvariable=boa_search)
 boa_search_entry.grid (row=0, column=1)
 #describe buttons on tab1
 btn = Button(tab1, text="Загрузить базу данных", command=click_button)
-btn.place(x=400, y=0)
+btn.place(x=500, y=0)
 btn2 = Button(tab1, text = "Приход")
-btn2.place(x=550, y=0)
+btn2.place(x=650, y=0)
 btn3 = Button(tab1, text="Начать поиск")
-btn3.place (x=300, y=0)
+btn3.place (x=400, y=0)
 frame_btn = Frame(tab1)
 frame_btn.grid(row=3, column=0)
 btn4 = Button (frame_btn, text='Добавить позицию')
